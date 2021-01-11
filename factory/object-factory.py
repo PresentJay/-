@@ -1,4 +1,5 @@
 from faker import Faker
+import control_excel as xl
 
 class Ipman:
     def __init__(self, name, address, ip):
@@ -10,9 +11,9 @@ class Ipman:
         print('name :', self.name)
         print('address :', self.address)
         print('ip :', self.ip)
-
-
-if __name__ == "__main__":
+        
+# 끝남
+def faker_test():
     f = Faker('ko_KR')
     
     # 가상환경 쓸 경우, 버퍼에 가상환경 주소가 남아 있는 것을 해결하기 위해
@@ -28,3 +29,8 @@ if __name__ == "__main__":
         j.show_data()
         
     print(len(IPmans))
+
+
+if __name__ == "__main__":
+    # faker_test()
+    xl.write_excel()
