@@ -14,6 +14,12 @@ def set_Ipmans(sheet, IPmans, start=2):
         sheet['C' + str(i)] = IPmans[i-start].ip
     return sheet
 
+def get_Count_Ipmans(sheet):
+    count = 1
+    while (sheet['A' + str(count)].value is not None) :
+        count+=1
+    return count-2
+
 def create_excel():
     wb = Workbook()
     sheet = wb.active
