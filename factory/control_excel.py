@@ -9,7 +9,7 @@ def init_Ipmans(sheet):
 
 def set_Ipmans(sheet, IPmans, start=2):
     for i in range(start, start+len(IPmans)):
-        sheet['A' + str(i)] = IPmans[i-start].name
+        sheet['A' + str(i)] = IPmans[i-start].name 
         sheet['B' + str(i)] = IPmans[i-start].address
         sheet['C' + str(i)] = IPmans[i-start].ip
     return sheet
