@@ -12,6 +12,21 @@ class Ipman:
         print('address :', self.address)
         print('ip :', self.ip)
 
+
+def serialization_from_excel(data):
+    IPmans = []
+    
+    for i in range(len(data)):
+        ipman = Ipman(data[i]['name'], data[i]['address'], data[i]['ip'])
+        IPmans.append(ipman)
+    
+    return IPmans
+
+
+def show_whole(Ipmans):
+    for i in Ipmans:
+        i.show_data()
+
         
 def faker_generator(cnt = 0):
     f = Faker('ko_KR')

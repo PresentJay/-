@@ -14,6 +14,17 @@ def set_Ipmans(sheet, IPmans, start=2):
         sheet['C' + str(i)] = IPmans[i-start].ip
     return sheet
 
+def get_data(sheet, cnt):
+    data = []
+    for i in range(2, cnt+2):
+        ipman = {
+            'name' : sheet['A' + str(i)].value,
+            'address' : sheet['B' + str(i)].value,
+            'ip' : sheet['C' + str(i)].value
+        }
+        data.append(ipman)
+    return data
+
 def get_Count_Ipmans(sheet):
     count = 1
     while (sheet['A' + str(count)].value is not None) :
