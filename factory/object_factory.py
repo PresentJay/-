@@ -1,5 +1,5 @@
 from faker import Faker
-import control_excel as xl
+import factory.control_excel as xl
 
 class Ipman:
     def __init__(self, name, address, ip):
@@ -11,26 +11,19 @@ class Ipman:
         print('name :', self.name)
         print('address :', self.address)
         print('ip :', self.ip)
+
         
-# 끝남
-def faker_test():
+def faker_generator(cnt = 0):
     f = Faker('ko_KR')
     
-    # 가상환경 쓸 경우, 버퍼에 가상환경 주소가 남아 있는 것을 해결하기 위해
-    input()
+    if cnt == 0:
+        input()
+        # 가상환경 쓸 경우, 버퍼에 가상환경 주소가 남아 있는 것을 해결하기 위해
+        cnt = input('몇개 생성할래? > ')
     
-    number = input('몇개 생성할래? > ')
     IPmans = []
 
-    for i in range(int(number)):
+    for i in range(int(cnt)):
         IPmans.append(Ipman(f.name(), f.address(), f.ipv4_private()))
         
-    for j in IPmans:
-        j.show_data()
-        
-    print(len(IPmans))
-
-
-if __name__ == "__main__":
-    # faker_test()
-    xl.write_excel()
+    return IPmans
