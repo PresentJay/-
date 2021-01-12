@@ -160,6 +160,9 @@ dmypy.json
 pyvenv.cfg
 pip-selfcheck.json
 
+venv2/
+
 result/
+secure_data.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,code,virtualenv
