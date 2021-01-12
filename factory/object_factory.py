@@ -13,7 +13,7 @@ class Ipman:
         print('ip :', self.ip)
 
 
-def serialization_from_excel(data):
+def serialization(data):
     IPmans = []
     
     for i in range(len(data)):
